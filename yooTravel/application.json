@@ -1,0 +1,24 @@
+[
+{
+  "settings": [ "master" ],
+    "appPort": "8666",
+    "specs": {
+      "yooMain": {
+        "type": "HTMLFrameMojit",
+        "config": {
+          "title": "YooTravel",
+          "child": 
+          {
+    "type": "yootSearch"
+}
+        }
+      }
+    }
+},
+{
+  "settings": [ "environment:development" ],
+  "staticHandling": {
+    "forceUpdate": true
+  }
+}
+]

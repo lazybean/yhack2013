@@ -1,0 +1,9 @@
+[{
+  "settings": [ "master" ],
+    "yootMain": {
+      "path": "/",
+        "verb": ["GET"],
+        "call": "yooMain.index"
+    }
+
+}]
