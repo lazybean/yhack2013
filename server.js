@@ -7,6 +7,8 @@ process.chdir(__dirname);
  * using an object with the desired key/value pairs.
  */
 var Mojito = require('mojito');
+//var app = Mojito.createServer();
+
 var app = Mojito.createServer();
 
 // ---------------------------------------------------------------------------
@@ -14,4 +16,5 @@ var app = Mojito.createServer();
 // server. Adjust below to match the requirements of your hosting environment.
 // ---------------------------------------------------------------------------
 
-module.exports = app.listen();
+//module.exports = app.listen();
+module.exports = app.listen(process.env.PORT || 5000);
