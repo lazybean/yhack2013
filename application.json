@@ -7,10 +7,17 @@
         "type": "HTMLFrameMojit",
         "config": {
           "title": "YooTravel",
-          "child": 
-          {
-    "type": "yootSearch"
-}
+          "deploy": true,
+          "child": {
+            "type": "MainBody",
+            "config": {
+              "children" : {
+                "yootSearch": {
+                  "type": "yootSearch"
+                }
+              }
+            }
+          }
         }
       }
     }
