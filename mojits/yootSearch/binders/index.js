@@ -41,10 +41,10 @@ YUI.add('yootSearchBinderIndex', function(Y, NAME) {
             function(err, resp) {
               if(!err) {
                 var places = Y.JSON.parse(resp),//resp[0];
-                place = places[0];
+                place = Y.Lang.isArray(places)? places[0] : places; //take the first result if more than one
                 node.one(".city").set('innerHTML', place.name);
                 node.one(".country").set('innerHTML', place.country.content);
-                me.mojitProxy.broadcast('searchCity:cityChosen', place);
+                me.mojitProxy.broadcast( 'searchCity:cityChosen', place);
               }
             });
         }

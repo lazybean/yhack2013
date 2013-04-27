@@ -38,8 +38,12 @@ YUI.add('yootSearchModelFoo', function(Y, NAME) {
       var sql = Y.Lang.sub(YQL_FMT.getCity, { query: query });
       Y.log('getCity yql query: ' + sql, 'WARN', NAME);
       Y.YQL(sql, function(response) {
-        Y.log('foo.server.js: getCity : ' + Y.JSON.stringify(response), 'WARN', NAME);
-        callback(null, response.query.results.place);
+        if (response.query.count <= 0) { 
+          callback("No Result");
+        } else {
+          Y.log('foo.server.js: getCity : ' + Y.JSON.stringify(response), 'WARN', NAME);
+          callback(null, response.query.results.place);
+        }
       });
     }
 
