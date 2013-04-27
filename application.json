@@ -1,6 +1,11 @@
 [
 {
   "settings": [ "master" ],
+    "yui": {
+      "config": {
+        "filter": "raw"
+      }
+    },
     "appPort": "5000",
     "specs": {
       "yooMain": {
@@ -14,6 +19,9 @@
               "children" : {
                 "yootSearch": {
                   "type": "yootSearch"
+                },
+                "visa": {
+                  "type": "visa"
                 },
                 "warning": {
                   "type": "warning"
