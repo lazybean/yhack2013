@@ -34,7 +34,7 @@ YUI.add('bossImageModelFoo', function(Y, NAME) {
       Y.YQL(sql, function(response) {
         Y.log('getBossImageData yql response: ' + response);
         if (response.query.results.bossresponse.images.count > 0) {
-          callback(null, response.query.results.bossresponse.images.results.result.slice(0,1)); 
+          callback(null, response.query.results.bossresponse.images.results.result); 
         } else {
           callback("No images");
         }

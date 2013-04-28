@@ -3,7 +3,8 @@
   "settings": [ "master" ],
     "yui": {
       "config": {
-        "gallery": "gallery-2013.02.27-21-03"
+        "gallery": "gallery-2013.02.27-21-03",
+        "filter": "raw"
       }
     },
     "appPort": "5000",

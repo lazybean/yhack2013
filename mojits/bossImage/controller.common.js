@@ -32,9 +32,6 @@ YUI.add('bossImage', function(Y, NAME) {
       if (!country) {
         ac.done(Y.JSON.stringify({ error: true}));
       } else {
-     if(ac.context.device ==="iphone") {
-      ac.assets.addCss('./index.iphone.css');
-     }
         ac.models.get('bossImageModelFoo').getBossImageData({'country': country, 'city': city}, function(error, response) {
           ac.done({'images':response}, 'bossImagesList');
         });

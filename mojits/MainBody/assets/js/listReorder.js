@@ -3,7 +3,7 @@
    then we configure yui to get modules from the gallery and select what we need
    */
 
-YUI().use( 'dd-constrain', 'dd-proxy', 'dd-drop', function(Y) {
+YUI().use('dd-constrain', 'dd-proxy', 'dd-drop', function(Y) {
     //Listen for all drop:over events
     Y.DD.DDM.on('drop:over', function(e) {
         //Get a reference to our drag and drop nodes
