@@ -51,4 +51,4 @@ YUI.add('eanLandmarksModelFoo', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['yql', 'yootravel-yql-fmt']});
+}, '0.0.1', {requires: [ 'yql', 'yootravel-yql-fmt']});
