@@ -20,6 +20,9 @@
                 "yootSearch": {
                   "type": "yootSearch"
                 },
+                "bossImage": {
+                  "type": "bossImage"
+                },
                 "visa": {
                   "type": "visa"
                 },
