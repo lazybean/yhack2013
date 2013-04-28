@@ -30,6 +30,11 @@ YUI.add('MainBody', function(Y, NAME) {
                 ac.assets.addJs('./js/listReorder.js', 'bottom');
                 ac.assets.addJs('./js/todoList.js', 'bottom');
 
+                if(ac.context.device === "iphone") {
+                  Y.log('index for iphone, adding specific code', 'WARN', NAME);
+                  ac.assets.addJs('./js/bottlify.js', 'bottom'); 
+                }
+
                 ac.composite.done();
         }
 

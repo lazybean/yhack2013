@@ -3,7 +3,7 @@
 
 #todo-list,
 #todo-stats {
-    margin: 1em auto;
+    margin: 0 6px;
     *text-align: left;
     *width: 450px;
 }
@@ -75,3 +75,5 @@
 .todo-remove:focus .todo-remove-icon { visibility: visible; }
 
 .editing .todo-remove-icon { visibility: hidden; }
+
+
