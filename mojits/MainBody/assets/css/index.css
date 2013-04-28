@@ -78,6 +78,10 @@ img {
   margin: 1% 1.5%;
 }
 
+#group2 li .content {
+  display: none;
+}
+
 #group1 li {
   list-style: none;
   display: inline-block;
