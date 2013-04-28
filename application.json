@@ -23,6 +23,9 @@
                 "bossImage": {
                   "type": "bossImage"
                 },
+                "currency": {
+                  "type": "currency"
+                },
                 "visa": {
                   "type": "visa"
                 },

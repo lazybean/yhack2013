@@ -26,7 +26,7 @@ YUI.add('MainBody', function(Y, NAME) {
                 ac.assets.addCss('./css/bootstrap.css');
                 ac.assets.addCss('./css/todo.css');
                 ac.assets.addCss('http://fonts.googleapis.com/css?family=Arvo:700');
-                ac.assets.addCss('http://fonts.googleapis.com/css?family=Babel');
+               // ac.assets.addCss('http://fonts.googleapis.com/css?family=Babel');
                 ac.assets.addJs('./js/listReorder.js', 'bottom');
                 ac.assets.addJs('./js/todoList.js', 'bottom');
 
