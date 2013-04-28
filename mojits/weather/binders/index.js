@@ -1,54 +1,53 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('weatherBinderIndex', function(Y, NAME) {
+YUI.add('bossImageBinderIndex', function(Y, NAME) {
 
-/**
- * The weatherBinderIndex module.
- *
- * @module weatherBinderIndex
- */
+  /**
+  * The bossImageBinderIndex module.
+  *
+  * @module bossImageBinderIndex
+  */
+
+  /**
+  * Constructor for the bossImageBinderIndex class.
+  *
+  * @class bossImageBinderIndex
+  * @constructor
+  */
+  Y.namespace('mojito.binders')[NAME] = {
 
     /**
-     * Constructor for the weatherBinderIndex class.
-     *
-     * @class weatherBinderIndex
-     * @constructor
-     */
-    Y.namespace('mojito.binders')[NAME] = {
+    * Binder initialization method, invoked after all binders on the page
+    * have been constructed.
+    */
+    init: function(mojitProxy) {
+      this.mojitProxy = mojitProxy;
+    },
 
-        /**
-         * Binder initialization method, invoked after all binders on the page
-         * have been constructed.
-         */
-        init: function(mojitProxy) {
-            this.mojitProxy = mojitProxy;
+    /**
+    * The binder method, invoked to allow the mojit to attach DOM event
+    * handlers.
+    *
+    * @param node {Node} The DOM node to which this mojit is attached.
+    */
+    bind: function(node) {
+      var me = this;
+      this.node = node;
+      var bossImage = node.one('.bossImage');
+      this.mojitProxy.listen('searchCity:cityChosen', function(evt) {
+        me.mojitProxy.invoke('getBossImage', {
+          'params': { 
+            'body' : { 
+              'place': evt}
+          }
         },
-
-        /**
-         * The binder method, invoked to allow the mojit to attach DOM event
-         * handlers.
-         *
-         * @param node {Node} The DOM node to which this mojit is attached.
-         */
-        bind: function(node) {
-            var me = this;
-            this.node = node;
-            /**
-             * Example code for the bind method:
-             *
-             * node.all('dt').on('mouseenter', function(evt) {
-             *   var dd = '#dd_' + evt.target.get('text');
-             *   me.node.one(dd).addClass('sel');
-             *
-             * });
-             * node.all('dt').on('mouseleave', function(evt) {
-             *   
-             *   var dd = '#dd_' + evt.target.get('text');
-             *   me.node.one(dd).removeClass('sel');
-             *
-             * });
-             */
+        function (err, resp) {
+          bossImage.set('innerHTML', resp); 
         }
+        );            
+      });
 
-    };
+    }
+
+  };
 
 }, '0.0.1', {requires: ['event-mouseenter', 'mojito-client']});
