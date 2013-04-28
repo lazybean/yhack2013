@@ -32,23 +32,27 @@ YUI.add('eanLandmarksModelFoo', function(Y, NAME) {
       *        data has been retrieved.
       */
       getEanLandmarksData: function(query, callback) {
-        var country = query.toLowerCase().trim().replace(' ','_'), 
-        sql = Y.Lang.sub(YQL_FMT.getEanLandmarks, {country: country});
+        var city = query.city.toLowerCase().trim().replace(' ','_'), 
+        countryCode = query.countryCode,
+        sql = Y.Lang.sub(YQL_FMT.getEanLandmarks, {'countryCode': countryCode, 'city': city});
         Y.log('getEanLandmarksData io query: ' +sql, 'WARN', NAME);
         Y.io(sql, { 
           on: {
             complete:  function(id, response) {
               Y.log('getEanLandmarksData yql response: ' + response.responseText);
-              callback(null, response); 
+              //callback(null, response.LocationInfoResponse.LocationInfo); 
+              var parsedResponse = Y.JSON.parse(response.responseText);
+              if (!parsedResponse.LocationInfoResponse.LocationInfos) {
+              callback('No answer, trou perdu');
+              } else {
+              callback(null, parsedResponse.LocationInfoResponse.LocationInfos.LocationInfo.splice(0, 4)); 
+              }
             }
           }
         });
-      },
-
-      getVisaData: function (query, callback) {
-
       }
+
 
     };
 
-}, '0.0.1', {requires: [ 'yql', 'yootravel-yql-fmt']});
+}, '0.0.1', {requires: [ 'io-base', 'yootravel-yql-fmt']});

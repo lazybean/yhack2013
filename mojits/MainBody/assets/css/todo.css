@@ -31,11 +31,10 @@
 .todo-input {
     display: block;
     font-family: Helvetica, sans-serif;
-    *font-size: 20px;
     line-height: normal;
     margin: 5px auto 0;
     padding: 6px;
-    width: 100%;
+    width: 96%;
 	height: 32px;
 	background-color: lightyellow;
 	border: 0;

@@ -1,10 +1,10 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('eanLandMarks', function(Y, NAME) {
+YUI.add('eanLandmarks', function(Y, NAME) {
 
   /**
-  * The eanLandMarks module.
+  * The eanLandmarks module.
   *
-  * @module eanLandMarks
+  * @module eanLandmarks
   */
 
   /**
@@ -22,21 +22,23 @@ YUI.add('eanLandMarks', function(Y, NAME) {
     *        to the Mojito API.
     */
     index: function(ac) {
-        ac.done();
+      ac.done();
     },
 
     getEanLandmarks: function(ac) {
       Y.log('getEanLandmarks action invokation body ' + Y.JSON.stringify(ac.params.body('place')), 'WARN', NAME);
-      var country = ac.params.body('place').data.country.content;
-      if (!country) {
+      var city = ac.params.body('place').data.name,
+      countryCode = ac.params.body('place').data.country.code;
+      if (!countryCode || !city) {
         ac.done(Y.JSON.stringify({ error: true}));
       } else {
-        ac.models.get('eanLandMarksModelFoo').getEanLandmarksData(country, function(error, response) {
-          ac.done(response);
+        ac.models.get('eanLandmarksModelFoo').getEanLandmarksData({'city': city, 'countryCode': countryCode}, function(error, response) {
+         ac.done({'locs': response}, 'landmarks');
+      //ac.done(Y.JSON.stringify(response));
         });
       }
     }
 
   };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-params-addon', 'mojito-assets-addon', 'mojito-models-addon', 'eanLandMarksModelFoo']});
+}, '0.0.1', {requires: ['mojito', 'mojito-params-addon', 'mojito-assets-addon', 'mojito-models-addon', 'eanLandmarksModelFoo']});
