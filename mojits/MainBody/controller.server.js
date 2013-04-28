@@ -24,6 +24,12 @@ YUI.add('MainBody', function(Y, NAME) {
     index: function(ac) {
           if(ac.context.device === "iphone") {
             Y.log('index for iphone, adding specific code', 'WARN', NAME);
+
+
+            ac.assets.addBlob('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable = no">', 'top');
+            ac.assets.addBlob('<meta name="apple-mobile-web-app-capable" content="yes">', 'top');
+            ac.assets.addBlob('<meta name="apple-mobile-web-app-status-bar-style" content="black">', 'top');
+            ac.assets.addBlob('<meta name="format-detection" content="telephone=no">', 'top');
             ac.assets.addJs('./js/bottlify.js', 'bottom'); 
           } else {
 
