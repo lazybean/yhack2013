@@ -1,5 +1,5 @@
 
-YUI.add('eanLandmarksModelFoo-tests', function(Y, NAME) {
+YUI.add('warningModelFoo-tests', function(Y, NAME) {
     
     var suite = new YUITest.TestSuite(NAME),
         model = null,
@@ -7,10 +7,10 @@ YUI.add('eanLandmarksModelFoo-tests', function(Y, NAME) {
     
     suite.add(new YUITest.TestCase({
         
-        name: 'eanLandmarksModelFoo user tests',
+        name: 'warningModelFoo user tests',
         
         setUp: function() {
-            model = Y.mojito.models.eanLandmarksModelFoo;
+            model = Y.mojito.models.warningModelFoo;
         },
         tearDown: function() {
             model = null;
@@ -40,4 +40,4 @@ YUI.add('eanLandmarksModelFoo-tests', function(Y, NAME) {
     
     YUITest.TestRunner.add(suite);
     
-}, '0.0.1', {requires: ['mojito-test', 'eanLandmarksModelFoo']});
+}, '0.0.1', {requires: ['mojito-test', 'warningModelFoo']});

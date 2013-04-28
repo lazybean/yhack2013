@@ -26,6 +26,9 @@
                 "currency": {
                   "type": "currency"
                 },
+                "eanLandmark": {
+                  "type": "eanLandmarks"
+                },
                 "visa": {
                   "type": "visa"
                 },

@@ -1,16 +1,16 @@
 
-YUI.add('eanLandmarks-tests', function(Y) {
+YUI.add('warning-tests', function(Y) {
 
-    var suite = new YUITest.TestSuite('eanLandmarks-tests'),
+    var suite = new YUITest.TestSuite('warning-tests'),
         controller = null,
         A = YUITest.Assert;
 
     suite.add(new YUITest.TestCase({
         
-        name: 'eanLandmarks user tests',
+        name: 'warning user tests',
         
         setUp: function() {
-            controller = Y.mojito.controllers.eanLandmarks;
+            controller = Y.mojito.controllers.warning;
         },
         tearDown: function() {
             controller = null;
@@ -30,7 +30,7 @@ YUI.add('eanLandmarks-tests', function(Y) {
                 },
                 models: {
                     get: function(modelName) {
-                        A.areEqual('eanLandmarksModelFoo', modelName, 'wrong model name');
+                        A.areEqual('warningModelFoo', modelName, 'wrong model name');
                         return {
                             getData: function(cb) {
                                 cb(null, modelData);
@@ -59,4 +59,4 @@ YUI.add('eanLandmarks-tests', function(Y) {
     
     YUITest.TestRunner.add(suite);
     
-}, '0.0.1', {requires: ['mojito-test', 'eanLandmarks']});
+}, '0.0.1', {requires: ['mojito-test', 'warning']});
