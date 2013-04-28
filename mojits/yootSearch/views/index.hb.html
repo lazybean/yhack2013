@@ -1,5 +1,13 @@
 <div id="{{mojit_view_id}}">
-  <input id="searchInput" type="text" />
-  
-  <div> <span class="city" > </span> : <span class="country"></span></div>
+  <div id="header">
+    <div class="form-search">
+      <p class="title title-header">1. Destination:</p>
+      <input id="searchInput" type="text" placeholder="Ex. London, .." class="span2 search-query">
+      <button id="searchButton"  class="btn"><i class="icon-search"></i></button>
+    </div>
+  </div>
+  <p class="locationTitle"></p>
+  <script id="locationTemplate" type="text/x-template">
+    {city}: {country}
+  </script>
 </div>

@@ -32,7 +32,8 @@ YUI.add('yootSearchBinderIndex', function(Y, NAME) {
     bind: function(node) {
       var me = this;
       this.node = node;
-      var searchInput = node.one('#searchInput');
+      var searchInput = node.one('#searchInput'),
+      locTemplate = node.one('#locationTemplate').getHTML();
       searchInput.focus();
       searchInput.on('keypress', function(evt) {
         if(evt.charCode === 13) {
@@ -40,10 +41,9 @@ YUI.add('yootSearchBinderIndex', function(Y, NAME) {
             { 'params': { 'body': { 'cityQuery': evt.target.get('value')}}},
             function(err, resp) {
               if(!err) {
-                var places = Y.JSON.parse(resp),//resp[0];
+                var places = Y.JSON.parse(resp),
                 place = Y.Lang.isArray(places)? places[0] : places; //take the first result if more than one
-                node.one(".city").set('innerHTML', place.name);
-                node.one(".country").set('innerHTML', place.country.content);
+                node.one('.locationTitle').setHTML(Y.Lang.sub(locTemplate, {'city': place.name, 'country': place.country.content}));
                 me.mojitProxy.broadcast( 'searchCity:cityChosen', place);
               }
             });

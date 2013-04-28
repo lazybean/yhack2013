@@ -22,6 +22,14 @@ YUI.add('MainBody', function(Y, NAME) {
          *        to the Mojito API.
          */
         index: function(ac) {
+                ac.assets.addCss('./css/index.css');
+                ac.assets.addCss('./css/bootstrap.css');
+                ac.assets.addCss('./css/todo.css');
+                ac.assets.addCss('http://fonts.googleapis.com/css?family=Arvo:700');
+                ac.assets.addCss('http://fonts.googleapis.com/css?family=Babel');
+                ac.assets.addJs('./js/listReorder.js', 'bottom');
+                ac.assets.addJs('./js/todoList.js', 'bottom');
+
                 ac.composite.done();
         }
 

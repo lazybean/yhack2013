@@ -11,7 +11,7 @@
       "yooMain": {
         "type": "HTMLFrameMojit",
         "config": {
-          "title": "YooTravel",
+          "title": "Yoo!Travel",
           "deploy": true,
           "child": {
             "type": "MainBody",
