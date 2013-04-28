@@ -1,5 +1,5 @@
 
-YUI.add('warningModelFoo-tests', function(Y, NAME) {
+YUI.add('weatherModelFoo-tests', function(Y, NAME) {
     
     var suite = new YUITest.TestSuite(NAME),
         model = null,
@@ -7,10 +7,10 @@ YUI.add('warningModelFoo-tests', function(Y, NAME) {
     
     suite.add(new YUITest.TestCase({
         
-        name: 'warningModelFoo user tests',
+        name: 'weatherModelFoo user tests',
         
         setUp: function() {
-            model = Y.mojito.models.warningModelFoo;
+            model = Y.mojito.models.weatherModelFoo;
         },
         tearDown: function() {
             model = null;
@@ -40,4 +40,4 @@ YUI.add('warningModelFoo-tests', function(Y, NAME) {
     
     YUITest.TestRunner.add(suite);
     
-}, '0.0.1', {requires: ['mojito-test', 'warningModelFoo']});
+}, '0.0.1', {requires: ['mojito-test', 'weatherModelFoo']});

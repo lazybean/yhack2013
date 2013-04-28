@@ -1,18 +1,17 @@
-
 /*HTML Elements*/
 /*{border:1px solid grey;}
 /*{margin: 0; padding: 0;}*/
 
 body {
   display: block;
+<<<<<<< HEAD
   background-image: url("../img/bg.png");
   background-size: cover;
+=======
+>>>>>>> parent of ddd59f5... bg, server->common
 }
-
 p, span, li {
-}
-h4 {
-  margin: 5px;
+  font-family: 'Abel', sans-serif;
 }
 
 img {
@@ -34,7 +33,7 @@ img {
   width: 100%;
   margin: 30px 0;
   padding-bottom: 20px;
-  border-bottom: 5px dotted lightgrey;
+  border-bottom: 5px dotted grey;
 }
 
 #play {
@@ -72,7 +71,6 @@ img {
 }
 #group1 li,
 #group2 li{
-  background-color: rgba(255, 255, 255, 0.8);
   list-style: none;
   width: 47%;
   margin: 1% 1.5%;
@@ -98,12 +96,12 @@ img {
 }
 
 .title-header { height: 22px; margin-left: -10px;}
-.title-note { margin-top: -28px; }
 
 .box-note {
   margin: 16px;
   background-color: LightGoldenRodYellow;
 }
+<<<<<<< HEAD
 
 .waring {
   max-height: 274;
@@ -113,4 +111,9 @@ img {
 .warning {
   max-height: 200px;
   overflow-y: scroll;
+=======
+.visa{
+ max-height: 150px;
+ overflow-y: scroll;
+>>>>>>> parent of ddd59f5... bg, server->common
 }
