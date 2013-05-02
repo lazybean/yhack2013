@@ -41,7 +41,7 @@ YUI.add('yootSearchBinderIndex', function(Y, NAME) {
             { 'params': { 'body': { 'cityQuery': evt.target.get('value')}}},
             function(err, resp) {
               if(!err) {
-                var places = Y.JSON.parse(resp),
+                var places = resp,
                 place = Y.Lang.isArray(places)? places[0] : places; //take the first result if more than one
                 node.one('.locationTitle').setHTML(Y.Lang.sub(locTemplate, {'city': place.name, 'country': place.country.content}));
                 me.mojitProxy.broadcast( 'searchCity:cityChosen', place);

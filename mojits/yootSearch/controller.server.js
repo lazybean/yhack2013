@@ -42,7 +42,7 @@ YUI.add('yootSearch', function(Y, NAME) {
         ac.done(Y.JSON.stringify({ error: true}));
       } else {
         ac.models.get('yootSearchModelFoo').getCity(cityQuery, function(error, response) {
-          ac.done(Y.JSON.stringify(response));
+          ac.done(response, 'json');//Y.JSON.stringify(response));
         });
       }
     }
